@@ -30,7 +30,7 @@ describe("Deploy a Flash Loan", function () {
 
 		const tx = await _flashLoanExample.createFlashLoan(DAI, 1000);
 		await tx.wait();
-		const remainingBalance = await token.balance(_flashLoanExample.address);
+		const remainingBalance = await token.balanceOf(_flashLoanExample.address);
 		expect(remainingBalance.lt(BALANCE_AMOUNT_DAI)).to.be.true;
 	});
 });
